@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased overflow-hidden;
+  }
+}
+
+/* Custom Scrollbar for the dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full hover:bg-gray-600 transition-colors;
+}
+
+/* Typography Overrides */
+.prose {
+  @apply transition-all duration-300;
+}
+
+/* Sidebar Active Glow */
+.active-note-glow {
+  box-shadow: 0 0 20px -5px rgba(37, 99, 235, 0.5);
+}
+
+/* Focus Mode Transitions */
+main div {
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Textarea focus glow */
+textarea:focus {
+  background: radial-gradient(circle at top left, #111827, #0f172a);
+}
+
+/* Custom styles for code blocks in preview */
+pre {
+  @apply rounded-xl border border-gray-700/50 shadow-2xl !important;
+}
+
+code:not(pre code) {
+  @apply bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded font-medium border border-blue-500/20;
+}
